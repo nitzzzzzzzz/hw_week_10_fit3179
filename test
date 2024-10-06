@@ -1,0 +1,16 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple bar chart.",
+  "data": {
+    "values": [
+      {"Category": "A", "Percentage": 28},
+      {"Category": "B", "Percentage": 55},
+      {"Category": "C", "Percentage": 43}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Category", "type": "nominal"},
+    "y": {"field": "Percentage", "type": "quantitative"}
+  }
+}
