@@ -1,16 +1,38 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A simple bar chart.",
+  "description": "A simple side-by-side bar chart.",
   "data": {
     "values": [
-      {"Category": "A", "Percentage": 28},
-      {"Category": "B", "Percentage": 55},
-      {"Category": "C", "Percentage": 43}
+      {"Category": "A", "Type": "Value 1", "Value": 28},
+      {"Category": "A", "Type": "Value 2", "Value": 55},
+      {"Category": "B", "Type": "Value 1", "Value": 43},
+      {"Category": "B", "Type": "Value 2", "Value": 91},
+      {"Category": "C", "Type": "Value 1", "Value": 81},
+      {"Category": "C", "Type": "Value 2", "Value": 53},
+      {"Category": "D", "Type": "Value 1", "Value": 19},
+      {"Category": "D", "Type": "Value 2", "Value": 87}
     ]
   },
   "mark": "bar",
   "encoding": {
-    "x": {"field": "Category", "type": "nominal"},
-    "y": {"field": "Percentage", "type": "quantitative"}
+    "x": {
+      "field": "Category",
+      "type": "nominal",
+      "axis": {"title": "Category"}
+    },
+    "xOffset": {
+      "field": "Type"  // Ensures side-by-side bar layout
+    },
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "axis": {"title": "Value"}
+    },
+    "color": {
+      "field": "Type",
+      "type": "nominal",
+      "scale": {"range": ["#008080", "#87CEEB"]},
+      "legend": {"title": "Type"}
+    }
   }
 }
