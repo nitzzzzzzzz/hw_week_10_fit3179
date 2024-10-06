@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Side-by-side bar chart showing internet access based on employment status in 2019.",
+  "title": {
+    "text": "Internet Access by Employment Status",
+    "anchor": "middle",
+    "fontSize": 16
+  },
+  "width": 900,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/nitzzzzzzzz/hw_week_10_fit3179/refs/heads/main/statistic_id1114434_share-of-global-adults-with-internet-access-2019-by-employment-status.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "transform": [
+    {"filter": "datum['Category'] != null && datum['Category'] != ''"}, 
+    {"fold": ["Yes, has access to the internet", "No, does not have access"], "as": ["Access Type", "Percentage"]}
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Category",
+      "type": "nominal",
+      "axis": {
+        "title": "Employment Status",
+        "labelAngle": 45
+      },
+      "offset": 20
+    },
+    "xOffset": {
+      "field": "Access Type"
+    },
+    "y": {
+      "field": "Percentage",
+      "type": "quantitative",
+      "axis": {
+        "title": "Share of Respondents (%)",
+        "grid": false 
+      }
+    },
+    "color": {
+      "field": "Access Type",
+      "type": "nominal",
+      "scale": {
+        "range": ["#008080", "#87CEEB"]
+      },
+      "legend": {"title": "Internet Access"}
+    },
+    "tooltip": [
+      {"field": "Category", "type": "nominal", "title": "Employment Status"},
+      {"field": "Access Type", "type": "nominal", "title": "Internet Access"},
+      {"field": "Percentage", "type": "quantitative", "title": "Percentage (%)"}
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null 
+    },
+    "axis": {
+      "domain": false, 
+      "grid": false  
+    }
+  }
+}
