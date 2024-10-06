@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Access Insights</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        h1 {
+            background-color: #003366;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        #employment_chart, #household_chart {
+            margin: 40px auto;
+            max-width: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Internet Access Insights</h1>
+
+    <h2>Internet Access by Employment Status</h2>
+    <p>This visualization shows the percentage of people who have internet access based on their employment status. 
+       You can observe how being employed full-time or part-time correlates with access to the internet, with insights 
+       into how unemployment or being out of the workforce affects internet accessibility.</p>
+    <div id="employment_chart"></div>
+
+    <h2>Internet Access by Household Composition</h2>
+    <p>This chart explores the relationship between household composition (whether a household has children or not) and 
+       internet access. It highlights how having children in a household impacts internet access availability compared 
+       to those without children in the household.</p>
+    <div id="household_chart"></div>
+
+    <script type="text/javascript">
+        // Embedding the Employment Internet Access chart
+        var employmentChartSpec = "https://raw.githubusercontent.com/nitzzzzzzzz/hw_week_10_fit3179/refs/heads/main/Internet_Access_Employement.json";
+        vegaEmbed('#employment_chart', employmentChartSpec).catch(console.error);
+
+        // Embedding the Household Composition Internet Access chart
+        var householdChartSpec = "https://raw.githubusercontent.com/nitzzzzzzzz/hw_week_10_fit3179/refs/heads/main/Internet_Access_Household_Children.json";
+        vegaEmbed('#household_chart', householdChartSpec).catch(console.error);
+    </script>
+</body>
+
+</html>
