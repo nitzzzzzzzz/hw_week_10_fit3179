@@ -16,6 +16,9 @@
             padding: 0;
             background-color: #eef7f9;
             overflow-x: hidden;
+
+
+
         }
 
         .container {
@@ -29,6 +32,7 @@
             color: white;
             text-align: center;
             padding: 40px;
+            height: 130px;
         }
 
         .header h1 {
@@ -285,8 +289,8 @@
 
     .chart-text-box-2 {
             position: absolute;
-            top: 2300px; 
-            left: 300px; 
+            top: 2150px; 
+            left: 230px; 
             background-color: rgba(255, 255, 255, 0.7); 
             padding: 20px;
             border-radius: 8px;
@@ -296,6 +300,7 @@
             line-height: 1.5;
             color: #404040;
             max-width: 300px;
+            max-height: fit-content;
             z-index: 1; 
     }
     
@@ -313,13 +318,16 @@
         overflow: auto; 
         border: 1px solid #ccc; 
         z-index: 1 ;
+        max-height: 600px;
+        max-width: 600px ;
+       
     }
 
 
             .chart-text-box-3 {
             position: absolute;
-            top: 400px;
-            left: 900px;
+            top: 390px;
+            left: 950px;
             width: 300px; 
             background-color: rgba(255, 255, 255, 0.7);
             padding: 10px;
@@ -327,6 +335,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             z-index: 1;
             font-family: Arial, sans-serif;
+            font-size: 17px;
         
         }
 
@@ -334,7 +343,7 @@
             position: absolute;
             top: 400px;
             left: 100px;
-            width: 350px; /* You can adjust the width */
+            width: 350px; 
             background-color: rgba(255, 255, 255, 0.7);
             padding: 10px;
             border-radius: 8px;
@@ -346,9 +355,9 @@
 
         .chart-text-box-5 {
             position: absolute;
-            top: 700px;
+            top: 690px;
             left: 850px;
-            width: 350px; /* You can adjust the width */
+            width: 350px; 
             background-color: rgba(255, 255, 255, 0.7);
             padding: 10px;
             border-radius: 8px;
@@ -363,7 +372,7 @@
             position: absolute;
             top: 600px;
             left: 50px;
-            width: 350px; /* You can adjust the width */
+            width: 350px;
             background-color: rgba(255, 255, 255, 0.7);
             padding: 10px;
             border-radius: 8px;
@@ -378,7 +387,7 @@
             position: absolute;
             top: 550px;
             left: 1000px;
-            width: 350px; /* You can adjust the width */
+            width: 350px;
             background-color: rgba(255, 255, 255, 0.7);
             padding: 10px;
             border-radius: 8px;
@@ -386,6 +395,26 @@
             z-index: 1;
 
             font-family: Arial, sans-serif;
+        }
+
+
+        .chart-text-box-8 {
+            position: absolute;
+            top: 2930px;
+            left: 1150px;
+            width: 250px; 
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+
+            font-family: Arial, sans-serif;
+            font-size: 9px;
+            max-height: 25px;
+            max-width: 400px;
+         
+      
         }
 
 
@@ -417,22 +446,18 @@
 </head>
 <body>
 
-    <!-- Main Container for Title and Content -->
     <div class="container">
 
-        <!-- Header Section -->
         <div class="header">
             <h1>Global Education and Digital Learning</h1>
-            <div id="kpi-chart" style="margin: 20px;"></div>
+            <div id="kpi-chart" style="margin: 30px;"></div>
         </div>
 
         <div class="container">
-            <!-- Subheading for Literacy Rates -->
             <h2 class="subheading" style="width: 1372px; margin-left: -20px; ">
                 Literacy Rates
             </h2>        
             <div class="map-text-section">
-                <!-- Choropleth Map -->
                 <div class="map" id="choropleth-map" style="margin-left: 320px;"></div>
             </div>
 
@@ -441,16 +466,16 @@
             </div>
 
             <div class="chart-text-box-4">
-                <p style="font-size: 17px;">Conversely, regions in <strong style="color: #4980ae;">Africa</strong> display much lower literacy levels. For instance, countries such as <strong style="color: #4980ae;">Chad</strong> and <strong style="color: #4980ae;">South Sudan</strong> exhibit literacy rates below <strong>35%</strong>, underscoring the educational challenges in these regions.</p>
+                <p style="font-size: 17px;">Regions in <strong style="color: #4980ae;">Africa</strong> display much lower literacy levels. For instance, countries such as <strong style="color: #4980ae;">Chad</strong> and <strong style="color: #4980ae;">South Sudan</strong> exhibit literacy rates below <strong>35%</strong>, underscoring the educational challenges in these regions.</p>
             </div>
 
             <div class="chart-text-box-5">
-                <p style="font-size: 17px;">Many countries in <strong style="color: black;">North America</strong> and <strong style="color: black;">South America</strong> also have high literacy rates, reflecting the focus on education systems and accessibility to resources. Nations such as <strong style="color: black;">Canada</strong> and <strong style="color: black;">Argentina</strong> consistently report literacy rates above <strong>90%</strong>, emphasizing the overall development in these regions.</p>
+                <p style="font-size: 17px;">Many countries in <strong style="color: black;">North America</strong> and <strong style="color: black;">South America</strong> also have high literacy rates. Nations such as <strong style="color: darkblue;">Canada</strong> and <strong style="color:darkblue;">Argentina</strong> consistently report literacy rates above <strong>90%</strong>.</p>
             </div>
 
             <div class="chart-text-box-6">
                 <p style="font-size: 17px;">
-                    European countries, such as <strong style="color: black">Germany</strong> and <strong style="color: black;">Sweden</strong>, consistently report high literacy rates above <strong>95%</strong>. These countries benefit from strong educational systems and equitable access to resources, further reinforcing their status as global leaders in education.
+                    European countries, such as <strong style="color: darkblue">Germany</strong> and <strong style="color: darkblue;">Sweden</strong>, consistently report <strong>high</strong> literacy rates above <strong>95%</strong>. These countries benefit from strong educational systems and equitable access to resources.
                   </p>            
             
             
@@ -458,8 +483,8 @@
 
             <div class="chart-text-box-7">
                 <p style="font-size: 17px;">
-                    <strong style="color: black; text-align: justify;">INEQUALITY IN LITERACY RATES HAS BEEN FOUND IN THE WORLD</strong>
-                </p>            
+                    <strong> Disparities </strong> in Education can be cleary seen and Europe appears to be the leading continent for higher literacy rates.
+                  </p>            
             
             
             </div>
@@ -471,13 +496,10 @@
         
         
 
-        <!-- Subheading for Completion Rate by Gender -->
         <h2 class="subheading">Gender Equality</h2>
 
         <div class="chart-container">
-            <!-- Donut Chart -->
             <div id="donut-chart"></div>
-            <!-- Gauge Chart and explanation -->
             <div>
                 <div id="gauge-chart" class="gauge-chart"></div>
                 <div class="gauge-text">
@@ -498,15 +520,11 @@
             </div>
         </div>
 
-        <!-- Subheading for Learning Poverty and GNI -->
         <h2 class="subheading">Learning Poverty and GNI</h2>
 
-        <!-- Bubble Chart and Text Container -->
         <div class="bubble-chart-container">
-            <!-- Bubble Chart -->
             <div id="bubble-chart" class="bubble-chart"></div>
 
-            <!-- Explanation text next to the chart -->
             <div class="bubble-text">
                 <h2 style="font-family: 'Arial', sans-serif; font-size: 20px; font-weight: bold; line-height: 1; color: black;">
                     Economic Disparities Highlight Global Education Gaps 
@@ -527,7 +545,6 @@
             </div>
         </div>
 
-        <!-- Subheading for Internet Usage -->
         <h2 class="subheading">Internet Usage</h2>
 
         <div class="internet-charts">
@@ -550,31 +567,38 @@
                         the persistent digital divide between income groups. 
                     </p>
                                     
-                    <p style="font-size: 17px;">The dot chart compares the percentage of countries offering 
-                        different <strong>learning platforms</strong> across various income groups. In higher-income countries 
-                        (<strong style="color: #4682b4;">HIC</strong>), learning is predominantly conducted through <strong>online platforms</strong> 
-                        and <strong>mobile phones</strong>. On the other hand, lower-income countries 
-                        (<strong style="color: #e6959c;">LIC</strong>) rely more on traditional methods, such as <strong>radio</strong> and 
-                        <strong>take-home packages</strong>, for education. Television remains a common platform across most income groups.</p>
+                    <p style="font-size: 17px;">The dot chart shows how different <strong>learning platforms</strong> are used across income groups. In 
+                        <strong style="color: #4682b4;">HIC</strong>, learning is mainly through <strong>online platforms</strong> and <strong>mobile phones</strong>, while 
+                        <strong style="color: #e6959c;">LIC</strong> rely more on <strong>radio</strong> and <strong>take-home packages</strong>. <strong>Television</strong> is common across most groups. 
+                        <strong style="color: #db7093;">Lower Middle Income groups (LMC)</strong> use a mix of traditional and digital platforms, and 
+                        <strong style="color: #009eff;">Upper Middle Income Groups (UMC)</strong> increasingly rely on digital solutions.</p>
+
+                    
                 </div>
                 
 
                 <div class="chart-text-box-2">
                     <p>Countries such as <span style="color: #984ea3;">Singapore</span> and 
                         <span style="color: #ff7f00;">Italy</span> are usually in the 
-                        <span style="color: #4682b4;">High Income Range</span>.
+                        <span style="color: #4682b4;">High Income Range</span> which further reinforces that Europe and Asia as leading Educational Continents.
                       </p>
                                       </div>
 
 
-            </div>
+               
+               
+                 <div class="chart-text-box-8">
+                         <p> Prepared by Nitya K, Data sourced by Our World in Data, Statisca and the World Bank, 1990-2023
+                                          </p>
+                                                
 
-            
-            
-            
+         
+  
 
 
     </div>
+
+
 
     <!-- Embedding Vega-Lite charts using JavaScript -->
     <script type="text/javascript">
@@ -590,7 +614,7 @@
         // Bubble Chart for Learning Poverty and GNI
         vegaEmbed('#bubble-chart', 'https://raw.githubusercontent.com/nitzzzzzzzz/tests/refs/heads/main/bubble5.json').catch(console.error);
 
-        // Streamgraph for Internet Usage (on the top)
+        // Area for Internet Usage (on the top)
         vegaEmbed('#stream-chart', 'https://raw.githubusercontent.com/nitzzzzzzzz/tests/refs/heads/main/stream21.json').catch(console.error);
 
         // Dot Plot for Internet Usage (below the streamgraph)
