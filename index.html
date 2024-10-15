@@ -1,72 +1,601 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internet Access Insights</title>
+    <title>Global Education and Digital Learning</title>
+
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+            padding: 0;
+            background-color: #eef7f9;
+            overflow-x: hidden;
         }
 
-        h1, h2 {
-            color: #333;
+        .container {
+            max-width: 10000px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        h1 {
-            background-color: #003366;
-            color: #fff;
-            padding: 20px;
+        .header {
+            background-color:black;
+            color: white;
             text-align: center;
-            border-radius: 8px;
+            padding: 40px;
         }
 
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #555;
+        .header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        h2.subheading {
+            text-align: center;
+            color: white;
+            background-color: #004080;
+            padding: 15px;
+            font-size: 1.8rem;
+            margin-top: 20px;
             margin-bottom: 20px;
         }
 
-        #employment_chart, #household_chart {
-            margin: 40px auto;
-            max-width: 800px;
+        .map-text-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+
+
+
+        
+
+        .map {
+        display: block;
+        margin: 0 auto; 
+        max-width: 800px; 
+        width: 100%;
+    }
+
+        .map-text {
+   
+            flex:1;
+            margin-left: 7px;
+            margin-top: -30px;
+            margin-bottom: -30px;
+            width: 380px; 
+            height: 200px;
+            text-align: justify; 
+            font-size: 17px;
+            font-family: 'Arial', sans-serif;
+
+        }
+
+
+    .map-text-section {
+        display: flex;
+        justify-content: center; 
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+    .map {
+        flex: 1;
+        max-width: 800px; 
+    }
+
+    .map-text {
+        flex: 1;
+        margin-left: 20px;
+        width: 380px;
+        text-align: justify;
+        font-size: 17px;
+        font-family: 'Arial', sans-serif;
+    }
+
+
+
+
+        .chart-container {
+            display: flex;
+            text-align: justify;
+            justify-content:left;
+            margin-bottom: 20px;
+        }
+
+        .gauge-chart {
+            width: 500px;
+            height: 200px;
+            margin-left: 60px;
+        }
+
+        .gauge-text {
+            flex: 1;
+            margin-left: 10px;
+            margin-top: -80px;
+            margin-bottom: 50px;
+            width: 300px;
+            text-align: justify;
+            font-size: 20px;
+        }
+
+        .gauge-text {
+            flex:1;
+            margin-left: 7px;
+            margin-top: -80px;
+            margin-bottom: 60px;
+            width: 380px; 
+            height: 200px;
+            text-align: justify; 
+            font-size: 20px;
+            font-family: 'Arial', sans-serif;
+
+        }
+
+        
+
+
+        .orange-text {
+            color: #ff7f0e;
+            font-weight: bold;
+        }
+
+        .blue-text {
+            color: #1f77b4;
+            font-weight: bold;
+        }
+
+        .bold-text {
+            font-weight: bold;
+        }
+
+        .bubble-chart-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        .bubble-chart {
+            flex: 0 0 45%;
+        }
+
+        .bubble-text {
+            flex: 0 0 45%;
+            margin-left: -10px;
+        }
+
+        .bubble-text h2, .bubble-text h3, .bubble-text p {
+            flex:1;
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-bottom: 50px;
+            width: 380px; 
+            height: 200px;
+            text-align: justify; 
+            font-size: 20px;
+        }
+
+        .bubble-text p {
+            flex:1;
+            margin-left: 10px;
+            margin-top: -200px;
+            margin-bottom: 50px;
+            width: 380px; 
+            height: 200px;
+            text-align: justify; 
+            font-size: 17px;
+
+        }
+
+        .internet-charts {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .internet-chart {
+            flex: 1;
+        }
+
+        .dot-chart {
+            flex: 1;
+            margin-top: 20px;
+        
+        }
+
+        .internet-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+       }
+
+        .internet-chart {
+            flex: 1;
+        }
+
+        .internet-text {
+            flex: 0 0 35%; 
+           margin-left: 20px;
+           font-family: 'Arial', sans-serif;
+           font-size: 1.2rem;
+           line-height: 1.5;
+           color: #404040;
+           text-align: justify;
+        }
+
+
+        .internet-container {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .stream-chart {
+            width: 100%;
+            height: 400px;
+        }
+
+        .dot-chart-interpretation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size:20px;
+        }
+
+        .dot-chart {
+            width: 10%;
+        }
+
+        .internet-interpretation-text {
+            width: 45%;
+            padding-left: 20px;
+            color: #404040;
+            font-family: 'Arial', sans-serif;
+            font-size: 20px;
+            line-height: 1.5;
+            text-align: justify;
+            margin-left: 200px;
+        }
+
+
+
+
+        .chart-text-box {
+            position: absolute;
+            top: 1560px; 
+            left: 460px; 
+            background-color: rgba(255, 255, 255, 0.7); 
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            font-family: 'Arial', sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: #404040;
+            max-width: 300px;
+            z-index: 1; 
+    }
+
+    .chart-text-box-2 {
+            position: absolute;
+            top: 2300px; 
+            left: 300px; 
+            background-color: rgba(255, 255, 255, 0.7); 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            font-family: 'Arial', sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: #404040;
+            max-width: 300px;
+            z-index: 1; 
+    }
+    
+
+    .custom-text-box {
+        background-color: rgba(255, 255, 255, 0.9); 
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        font-family: 'Arial', sans-serif;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        color: #404040;
+        resize: horizontal;
+        overflow: auto; 
+        border: 1px solid #ccc; 
+        z-index: 1 ;
+    }
+
+
+            .chart-text-box-3 {
+            position: absolute;
+            top: 400px;
+            left: 900px;
+            width: 300px; 
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            font-family: Arial, sans-serif;
+        
+        }
+
+        .chart-text-box-4 {
+            position: absolute;
+            top: 400px;
+            left: 100px;
+            width: 350px; /* You can adjust the width */
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            font-family: Arial, sans-serif;
+
+        }
+
+        .chart-text-box-5 {
+            position: absolute;
+            top: 700px;
+            left: 850px;
+            width: 350px; /* You can adjust the width */
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+
+            font-family: Arial, sans-serif;
+
+        }
+
+        .chart-text-box-6 {
+            position: absolute;
+            top: 600px;
+            left: 50px;
+            width: 350px; /* You can adjust the width */
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+
+            font-family: Arial, sans-serif;
+        }
+
+
+        .chart-text-box-7 {
+            position: absolute;
+            top: 550px;
+            left: 1000px;
+            width: 350px; /* You can adjust the width */
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+
+            font-family: Arial, sans-serif;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
-
 <body>
-    <h1>Internet Access Insights</h1>
 
-    <h2>Internet Access by Employment Status</h2>
-    <p>This visualization shows the percentage of people who have internet access based on their employment status. 
-       You can observe how being employed full-time or part-time correlates with access to the internet, with insights 
-       into how unemployment or being out of the workforce affects internet accessibility.</p>
-    <div id="employment_chart"></div>
+    <!-- Main Container for Title and Content -->
+    <div class="container">
 
-    <h2>Internet Access by Household Composition</h2>
-    <p>This chart explores the relationship between household composition (whether a household has children or not) and 
-       internet access. It highlights how having children in a household impacts internet access availability compared 
-       to those without children in the household.</p>
-    <div id="household_chart"></div>
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Global Education and Digital Learning</h1>
+            <div id="kpi-chart" style="margin: 20px;"></div>
+        </div>
 
+        <div class="container">
+            <!-- Subheading for Literacy Rates -->
+            <h2 class="subheading" style="width: 1372px; margin-left: -20px; ">
+                Literacy Rates
+            </h2>        
+            <div class="map-text-section">
+                <!-- Choropleth Map -->
+                <div class="map" id="choropleth-map" style="margin-left: 320px;"></div>
+            </div>
+
+            <div class="chart-text-box-3">
+                <p > Countries such as <strong style="color: darkblue;">Russia</strong> and <strong style="color: darkblue;">China</strong> showcase impressive literacy rates, both exceeding <strong>95%</strong>, reflecting their well-established education systems.</p>
+            </div>
+
+            <div class="chart-text-box-4">
+                <p style="font-size: 17px;">Conversely, regions in <strong style="color: #4980ae;">Africa</strong> display much lower literacy levels. For instance, countries such as <strong style="color: #4980ae;">Chad</strong> and <strong style="color: #4980ae;">South Sudan</strong> exhibit literacy rates below <strong>35%</strong>, underscoring the educational challenges in these regions.</p>
+            </div>
+
+            <div class="chart-text-box-5">
+                <p style="font-size: 17px;">Many countries in <strong style="color: black;">North America</strong> and <strong style="color: black;">South America</strong> also have high literacy rates, reflecting the focus on education systems and accessibility to resources. Nations such as <strong style="color: black;">Canada</strong> and <strong style="color: black;">Argentina</strong> consistently report literacy rates above <strong>90%</strong>, emphasizing the overall development in these regions.</p>
+            </div>
+
+            <div class="chart-text-box-6">
+                <p style="font-size: 17px;">
+                    European countries, such as <strong style="color: black">Germany</strong> and <strong style="color: black;">Sweden</strong>, consistently report high literacy rates above <strong>95%</strong>. These countries benefit from strong educational systems and equitable access to resources, further reinforcing their status as global leaders in education.
+                  </p>            
+            
+            
+            </div>
+
+            <div class="chart-text-box-7">
+                <p style="font-size: 17px;">
+                    <strong style="color: black; text-align: justify;">INEQUALITY IN LITERACY RATES HAS BEEN FOUND IN THE WORLD</strong>
+                </p>            
+            
+            
+            </div>
+    
+    
+        
+        </div>
+        
+        
+        
+
+        <!-- Subheading for Completion Rate by Gender -->
+        <h2 class="subheading">Gender Equality</h2>
+
+        <div class="chart-container">
+            <!-- Donut Chart -->
+            <div id="donut-chart"></div>
+            <!-- Gauge Chart and explanation -->
+            <div>
+                <div id="gauge-chart" class="gauge-chart"></div>
+                <div class="gauge-text">
+
+                    <p  style="font-family: 'Arial', sans-serif; font-size: 20px; font-weight: bold; color: black;">
+                        Gender equality appears consistent across the board.
+                    </p>
+    
+                    <h3 style="font-family: 'Arial', sans-serif; font-size: 17px; font-weight: bold; color: #404040;">
+                        Both <span style="color: #00b9c5;">Male</span> and <span style="color: #7c43ed;">Female</span> seem to have equal completion and unemployment rates with just slight differences.
+                    </h3>
+                    
+                    <p style="font-family: 'Arial', sans-serif; font-size: 17px; color: #404040;">
+                        The <span class="bold-text">Completion Rate</span> from <span class="bold-text">Primary</span> to <span class="bold-text">Secondary School</span> has shown a decrease from <span class="bold-text">41.9%</span> to <span class="bold-text">22.9%</span>. Lower completion rates may impact <span class="bold-text">education</span> and <span class="bold-text">employment prospects</span>, stressing the need for support.
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Subheading for Learning Poverty and GNI -->
+        <h2 class="subheading">Learning Poverty and GNI</h2>
+
+        <!-- Bubble Chart and Text Container -->
+        <div class="bubble-chart-container">
+            <!-- Bubble Chart -->
+            <div id="bubble-chart" class="bubble-chart"></div>
+
+            <!-- Explanation text next to the chart -->
+            <div class="bubble-text">
+                <h2 style="font-family: 'Arial', sans-serif; font-size: 20px; font-weight: bold; line-height: 1; color: black;">
+                    Economic Disparities Highlight Global Education Gaps 
+                </h2>
+
+                <p style="font-family: 'Arial', sans-serif; font-size: 17px; color: #404040; margin-top: -180px;"> This bubble chart reveals how economic strength correlates with education levels in different countries.
+                    <span style="color: #984ea3;">Singapore</span> and <span style="color: #ff7f00;">Italy</span> have low <span class="bold-text">Learning Poverty</span> with high GNI, whereas nations like <span style="color: #e41a1c;">South Africa</span> have high <span class="bold-text">Learning Poverty</span> with lower GNI, reflecting the impact of economic inequality on education.
+                </p>
+                
+                <p style="font-family: 'Arial', sans-serif; font-size: 17px; color: #404040; margin-top: -80px;">
+                    Meanwhile, <span style="color: #0800fb;">North American</span> countries show a combination of low Learning Poverty and high GNI, with significant internet access and education resources. Countries in <span style="color: #ff0184;">South America</span> demonstrate more varied outcomes, with some countries facing moderate to high Learning Poverty despite relatively stable economies.
+                </p>
+                
+                <p style="font-family: 'Arial', sans-serif; font-size: 17px; color: #404040; margin-top: -80px; margin-bottom: -100px;">
+                    While this bubble chart illustrates the relationship between <span class="blue-text">Learning Poverty</span> and <span class="blue-text">GNI per Capita</span>, other factors such as <span style="color: #333; font-weight: bold;">Internet Access</span> should be investigated.
+                </p>
+                
+            </div>
+        </div>
+
+        <!-- Subheading for Internet Usage -->
+        <h2 class="subheading">Internet Usage</h2>
+
+        <div class="internet-charts">
+            <div class="internet-container">
+                <div class="internet-chart" id="stream-chart"></div>
+            </div>
+
+            <div class="dot-chart-interpretation">
+                <div class="dot-chart" id="dot-chart"></div>
+                <div class="chart-text-box">
+                    <p>This chart demonstrates the relationship between <span class="blue-text">Learning Poverty</span> and <span class="blue-text">GNI per Capita</span> across countries.</p>
+                </div>
+
+                <div class="custom-text-box" style="width: 600px; height: fit-content;">
+                    <p style="font-size: 17px;">
+                        The area graph shows the steady rise in internet usage over time, with high-income countries, such as 
+                        <strong style="color: #984ea3;">Singapore</strong> and <strong style="color: #ff7f00;">Italy</strong>, 
+                        having consistently high internet usage rates of over <strong>90%</strong>. Meanwhile, low-income countries 
+                        have experienced slower growth, remaining below <strong>20%</strong> internet usage for many years. This highlights 
+                        the persistent digital divide between income groups. 
+                    </p>
+                                    
+                    <p style="font-size: 17px;">The dot chart compares the percentage of countries offering 
+                        different <strong>learning platforms</strong> across various income groups. In higher-income countries 
+                        (<strong style="color: #4682b4;">HIC</strong>), learning is predominantly conducted through <strong>online platforms</strong> 
+                        and <strong>mobile phones</strong>. On the other hand, lower-income countries 
+                        (<strong style="color: #e6959c;">LIC</strong>) rely more on traditional methods, such as <strong>radio</strong> and 
+                        <strong>take-home packages</strong>, for education. Television remains a common platform across most income groups.</p>
+                </div>
+                
+
+                <div class="chart-text-box-2">
+                    <p>Countries such as <span style="color: #984ea3;">Singapore</span> and 
+                        <span style="color: #ff7f00;">Italy</span> are usually in the 
+                        <span style="color: #4682b4;">High Income Range</span>.
+                      </p>
+                                      </div>
+
+
+            </div>
+
+            
+            
+            
+
+
+    </div>
+
+    <!-- Embedding Vega-Lite charts using JavaScript -->
     <script type="text/javascript">
-        // Embedding the Employment Internet Access chart
-        var employmentChartSpec = "https://raw.githubusercontent.com/nitzzzzzzzz/hw_week_10_fit3179/refs/heads/main/Internet_Access_Employement.json";
-        vegaEmbed('#employment_chart', employmentChartSpec).catch(console.error);
+        vegaEmbed('#kpi-chart', 'https://raw.githubusercontent.com/nitzzzzzzzz/tests/refs/heads/main/kpi2.json').catch(console.error);
+        vegaEmbed('#choropleth-map', 'https://raw.githubusercontent.com/nitzzzzzzzz/tests/refs/heads/main/map10.json').catch(console.error);
 
-        // Embedding the Household Composition Internet Access chart
-        var householdChartSpec = "https://raw.githubusercontent.com/nitzzzzzzzz/hw_week_10_fit3179/refs/heads/main/Internet_Access_Household_Children.json";
-        vegaEmbed('#household_chart', householdChartSpec).catch(console.error);
+        // Donut Chart for Completion Rate by Gender
+        vegaEmbed('#donut-chart', 'https://raw.githubusercontent.com/nitzzzzzzzz/tests/refs/heads/main/donut16.json').catch(console.error);
+
+        // Gauge Chart
+        vegaEmbed('#gauge-chart', 'https://raw.githubusercontent.com/nitzzzzzzzz/tests/refs/heads/main/gauge7.json').catch(console.error);
+
+        // Bubble Chart for Learning Poverty and GNI
+        vegaEmbed('#bubble-chart', 'https://raw.githubusercontent.com/nitzzzzzzzz/tests/refs/heads/main/bubble5.json').catch(console.error);
+
+        // Streamgraph for Internet Usage (on the top)
+        vegaEmbed('#stream-chart', 'https://raw.githubusercontent.com/nitzzzzzzzz/tests/refs/heads/main/stream21.json').catch(console.error);
+
+        // Dot Plot for Internet Usage (below the streamgraph)
+        vegaEmbed('#dot-chart', 'https://raw.githubusercontent.com/nitzzzzzzzz/tests/refs/heads/main/dot6.json').catch(console.error);
     </script>
-</body>
 
+</body>
 </html>
