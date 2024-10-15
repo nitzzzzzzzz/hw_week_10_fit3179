@@ -417,3 +417,210 @@
         }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>Global Education and Digital Learning</h1>
+            <div id="kpi-chart" style="margin: 30px;"></div>
+        </div>
+
+        <div class="container">
+            <h2 class="subheading" style="width: 1372px; margin-left: -20px; ">
+                Literacy Rates
+            </h2>        
+            <div class="map-text-section">
+                <div class="map" id="choropleth-map" style="margin-left: 320px;"></div>
+            </div>
+
+            <div class="chart-text-box-3">
+                <p > Countries such as <strong style="color: darkblue;">Russia</strong> and <strong style="color: darkblue;">China</strong> showcase impressive literacy rates, both exceeding <strong>95%</strong>, reflecting their well-established education systems.</p>
+            </div>
+
+            <div class="chart-text-box-4">
+                <p style="font-size: 17px;">Regions in <strong style="color: #4980ae;">Africa</strong> display much lower literacy levels. For instance, countries such as <strong style="color: #4980ae;">Chad</strong> and <strong style="color: #4980ae;">South Sudan</strong> exhibit literacy rates below <strong>35%</strong>, underscoring the educational challenges in these regions.</p>
+            </div>
+
+            <div class="chart-text-box-5">
+                <p style="font-size: 17px;">Many countries in <strong style="color: black;">North America</strong> and <strong style="color: black;">South America</strong> also have high literacy rates. Nations such as <strong style="color: darkblue;">Canada</strong> and <strong style="color:darkblue;">Argentina</strong> consistently report literacy rates above <strong>90%</strong>.</p>
+            </div>
+
+            <div class="chart-text-box-6">
+                <p style="font-size: 17px;">
+                    European countries, such as <strong style="color: darkblue">Germany</strong> and <strong style="color: darkblue;">Sweden</strong>, consistently report <strong>high</strong> literacy rates above <strong>95%</strong>. These countries benefit from strong educational systems and equitable access to resources.
+                  </p>            
+            
+            
+            </div>
+
+            <div class="chart-text-box-7">
+                <p style="font-size: 17px;">
+                    <strong> Disparities </strong> in Education can be cleary seen and Europe appears to be the leading continent for higher literacy rates.
+                  </p>            
+            
+            
+            </div>
+    
+    
+        
+        </div>
+        
+        
+        
+
+        <h2 class="subheading">Gender Equality</h2>
+
+        <div class="chart-container">
+            <div id="donut-chart"></div>
+            <div>
+                <div id="gauge-chart" class="gauge-chart"></div>
+                <div class="gauge-text">
+
+                    <p  style="font-family: 'Arial', sans-serif; font-size: 20px; font-weight: bold; color: black; text-align: center;">
+                        Gender equality appears consistent across the board
+                    </p>
+    
+                    <h3 style="font-family: 'Arial', sans-serif; font-size: 17px; font-weight: bold; color: #404040;">
+                        Both <span style="color: #00b9c5;">Male</span> and <span style="color: #7c43ed;">Female</span> seem to have equal completion and unemployment rates with just slight differences.
+                    </h3>
+                    
+                    <p style="font-family: 'Arial', sans-serif; font-size: 17px; color: #404040;">
+                        The <span class="bold-text">Completion Rate</span> from <span class="bold-text">Primary</span> to <span class="bold-text">Secondary School</span> has shown a decrease from <span class="bold-text">41.9%</span> to <span class="bold-text">22.9%</span>. Lower completion rates may impact <span class="bold-text">education</span> and <span class="bold-text">employment prospects</span>, stressing the need for support.
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+
+        <h2 class="subheading">Learning Poverty and GNI</h2>
+
+        <div class="bubble-chart-container">
+            <div id="bubble-chart" class="bubble-chart"></div>
+
+            <div class="bubble-text">
+                <h2 style="font-family: 'Arial', sans-serif; font-size: 20px; font-weight: bold; line-height: 1; color: black; text-align: center;">
+                    Economic Disparities Highlight Global Education Gaps 
+                </h2>
+
+                <p style="font-family: 'Arial', sans-serif; font-size: 17px; color: #404040; margin-top: -180px;"> This bubble chart reveals how economic strength correlates with education levels in different countries.
+                    <span style="color: #984ea3;">Singapore</span> and <span style="color: #ff7f00;">Italy</span> have low <span class="bold-text">Learning Poverty</span> with high GNI, whereas nations like <span style="color: #e41a1c;">South Africa</span> have high <span class="bold-text">Learning Poverty</span> with lower GNI, reflecting the impact of economic inequality on education.
+                </p>
+                
+                <p style="font-family: 'Arial', sans-serif; font-size: 17px; color: #404040; margin-top: -80px;">
+                    Meanwhile, <span style="color: #0800fb;">North American</span> countries show a combination of low Learning Poverty and high GNI, with significant internet access and education resources. Countries in <span style="color: #ff0184;">South America</span> demonstrate more varied outcomes, with some countries facing moderate to high Learning Poverty despite relatively stable economies.
+                </p>
+                
+                <p style="font-family: 'Arial', sans-serif; font-size: 17px; color: #404040; margin-top: -80px; margin-bottom: -100px;">
+                    While this bubble chart illustrates the relationship between <span class="blue-text">Learning Poverty</span> and <span class="blue-text">GNI per Capita</span>, other factors such as <span style="color: #333; font-weight: bold;">Internet Access</span> should be investigated.
+                </p>
+                
+            </div>
+        </div>
+
+        <h2 class="subheading">Internet Usage</h2>
+
+        <div class="internet-charts">
+            <div class="internet-container">
+                <div class="internet-chart" id="stream-chart"></div>
+            </div>
+
+            <div class="dot-chart-interpretation">
+                <div class="dot-chart" id="dot-chart"></div>
+                <div class="chart-text-box">
+                    <p>This chart demonstrates the relationship between <span class="blue-text">Learning Poverty</span> and <span class="blue-text">GNI per Capita</span> across countries.</p>
+                </div>
+
+                <div class="custom-text-box" style="width: 600px; height: fit-content;">
+                    <p style="font-size: 17px;">
+                        The area graph shows the steady rise in internet usage over time, with high-income countries, such as 
+                        <strong style="color: #984ea3;">Singapore</strong> and <strong style="color: #ff7f00;">Italy</strong>, 
+                        having consistently high internet usage rates of over <strong>90%</strong>. Meanwhile, low-income countries 
+                        have experienced slower growth, remaining below <strong>20%</strong> internet usage for many years. This highlights 
+                        the persistent digital divide between income groups. 
+                    </p>
+                                    
+                    <p style="font-size: 17px;">The dot chart shows how different <strong>learning platforms</strong> are used across income groups. In 
+                        <strong style="color: #4682b4;">HIC</strong>, learning is mainly through <strong>online platforms</strong> and <strong>mobile phones</strong>, while 
+                        <strong style="color: #e6959c;">LIC</strong> rely more on <strong>radio</strong> and <strong>take-home packages</strong>. <strong>Television</strong> is common across most groups. 
+                        <strong style="color: #db7093;">Lower Middle Income groups (LMC)</strong> use a mix of traditional and digital platforms, and 
+                        <strong style="color: #009eff;">Upper Middle Income Groups (UMC)</strong> increasingly rely on digital solutions.</p>
+
+                    
+                </div>
+                
+
+                <div class="chart-text-box-2">
+                    <p>Countries such as <span style="color: #984ea3;">Singapore</span> and 
+                        <span style="color: #ff7f00;">Italy</span> are usually in the 
+                        <span style="color: #4682b4;">High Income Range</span> which further reinforces that Europe and Asia as leading Educational Continents.
+                      </p>
+                                      </div>
+
+
+               
+               
+                 <div class="chart-text-box-8">
+                          <p style="white-space: nowrap;">Prepared by Nitya K, Data sourced by Our World in Data, Statisca and the World Bank, 1990-2023</p>
+                  </div>
+                                                
+
+         
+  
+
+
+    </div>
+
+
+
+    <!-- Embedding Vega-Lite charts using JavaScript -->
+    <script type="text/javascript">
+        vegaEmbed('#kpi-chart', 'https://raw.githubusercontent.com/nitzzzzzzzz/tests/refs/heads/main/kpi2.json').catch(console.error);
+        vegaEmbed('#choropleth-map', 'https://raw.githubusercontent.com/nitzzzzzzzz/tests/refs/heads/main/map10.json').catch(console.error);
+
+        // Donut Chart for Completion Rate by Gender
+        vegaEmbed('#donut-chart', 'https://raw.githubusercontent.com/nitzzzzzzzz/tests/refs/heads/main/donut16.json').catch(console.error);
+
+        // Gauge Chart
+        vegaEmbed('#gauge-chart', 'https://raw.githubusercontent.com/nitzzzzzzzz/tests/refs/heads/main/gauge7.json').catch(console.error);
+
+        // Bubble Chart for Learning Poverty and GNI
+        vegaEmbed('#bubble-chart', 'https://raw.githubusercontent.com/nitzzzzzzzz/tests/refs/heads/main/bubble5.json').catch(console.error);
+
+        // Area for Internet Usage (on the top)
+        vegaEmbed('#stream-chart', 'https://raw.githubusercontent.com/nitzzzzzzzz/tests/refs/heads/main/stream21.json').catch(console.error);
+
+        // Dot Plot for Internet Usage (below the streamgraph)
+        vegaEmbed('#dot-chart', 'https://raw.githubusercontent.com/nitzzzzzzzz/tests/refs/heads/main/dot6.json').catch(console.error);
+    </script>
+
+</body>
+</html>
+
+
